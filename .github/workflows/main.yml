@@ -1,0 +1,26 @@
+name: Solidity Vulnerability Scanner
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  vulnerability_scanner:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Scan Solidity files
+      uses: Sentnl/solidity-vulnerability-scanner-action@main
+      with:
+        openai_api_key: ${{ secrets.OPENAI_API_KEY }}
+        engine: 'text-davinci-002'  # Replace with the desired engine identifier
+
+    - name: Upload vulnerability report
+      uses: actions/upload-artifact@v2
+      with:
+        name: vulnerability-report
+        path: ./**/*_vulnerabilities.txt
