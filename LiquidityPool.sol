@@ -21,7 +21,7 @@ contract LiquidityProvider {
                 msg.sender,
                 999_999_999_999_999_999 * 10**decimals
             ), // quiet large amount
-            "Not approved yet 2"
+            "Not approved yet"
         );
     }
 }
