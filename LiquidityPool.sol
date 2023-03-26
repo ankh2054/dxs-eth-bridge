@@ -208,7 +208,7 @@ contract LiquidityPool {
             createAccount(withdrawAddress, tokenType);
         }
 
-        require(amountCents > 0, "Amount must be > 0");
+        require(amountCents > 0, "Amount must bee > 0");
         require(_tokens[tokenType].decimals > 0, "Unknown");
 
         bool collected = IErc20Min(_tokens[tokenType].pointer).transferFrom(
