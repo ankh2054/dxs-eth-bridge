@@ -132,7 +132,7 @@ contract LiquidityPool {
 
     function transferOwnershipComplete(address nextOwner) public {
         assert(_ownershipTransferStarted > 0);
-        require(msg.sender == _nextOwnerAddress, "Caller is not next owner");
+        require(msg.sender == _nextOwnerAddress, "Caller is not next owner!");
         require(
             block.timestamp - _ownershipTransferStarted < 1 minutes,
             "operation timeout"
