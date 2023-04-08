@@ -96,7 +96,7 @@ contract LiquidityPool {
     mapping(uint8 => Token) private _tokens;
 
     modifier onlyOwner() {
-        require(msg.sender == _ownerAddress, "Caller is not current owner!");
+        require(msg.sender == _ownerAddress, "Caller is not current owner");
         _;
     }
 
